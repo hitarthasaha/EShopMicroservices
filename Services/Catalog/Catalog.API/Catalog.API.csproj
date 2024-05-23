@@ -4,23 +4,46 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerComposeProjectPath>../../../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>62547112-fe3a-4a1f-9a1f-ca2ac92ee0e8</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="Products\" />
     <None Remove="Products\CreateProduct\" />
+    <None Remove="Products\GetProducts\" />
+    <None Remove="Products\GetProductById\" />
+    <None Remove="Products\GetProductByCategory\" />
+    <None Remove="Products\UpdateProduct\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Products\DeleteProduct\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Products\" />
     <Folder Include="Products\CreateProduct\" />
+    <Folder Include="Products\GetProducts\" />
+    <Folder Include="Products\GetProductById\" />
+    <Folder Include="Products\GetProductByCategory\" />
+    <Folder Include="Products\UpdateProduct\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Products\DeleteProduct\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Carter" Version="8.1.0" />
+    <PackageReference Include="Marten" Version="7.14.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj">
