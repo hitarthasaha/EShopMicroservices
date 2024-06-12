@@ -10,6 +10,8 @@
     <UserSecretsId>c441423b-48e5-49ce-a73f-3487e32b579b</UserSecretsId>
   </PropertyGroup>
 	
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
  <ItemGroup>    
     <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.0" />    
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.0" />    

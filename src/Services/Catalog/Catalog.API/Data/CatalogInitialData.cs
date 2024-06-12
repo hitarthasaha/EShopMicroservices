@@ -13,7 +13,7 @@ public class CatalogInitialData : IInitialData
             return;
 
         // Marten UPSERT will cater for existing records
-        session.Store<Product>(GetPreconfiguredProducts());
+        session.Store(GetPreconfiguredProducts());
         await session.SaveChangesAsync();
     }
 

@@ -9,6 +9,8 @@
     <UserSecretsId>cf14f678-30ab-43ef-9e0d-ca7f30743087</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
 	  <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.0" />

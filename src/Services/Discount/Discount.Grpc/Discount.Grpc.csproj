@@ -9,6 +9,8 @@
     <UserSecretsId>80fccb7e-48d9-4ec2-b1f2-cfcb2e1ebe64</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
 	<ItemGroup>
 		<PackageReference Include="Grpc.AspNetCore" Version="2.60.0" />
 		<PackageReference Include="Mapster" Version="7.4.0" />
